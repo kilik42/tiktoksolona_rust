@@ -16,19 +16,18 @@ import { useWalletModal } from "@solana/wallet-adapter-react-ui";
 // const endpoint = network;
 
 
-const walletConnectProvider = ({children}) => {
+const WalletConnectProvider = ({children}) => {
     const endpoint = useMemo(() => clusterApiUrl("devnet"), []);
-    const wallets = useMemo(() => [ new PhantomWalletAdapter(), new WalletConnectProvider({ rpc: { devnet: endpoint } }) ], []
-    );
+    const wallets = useMemo(() => [ new PhantomWalletAdapter(), []]);
     return (
         <ConnectionProvider endpoint={endpoint}>
-        <WalletProvider wallets={wallets} autoConnect>
-            <WalletModalProvider>{children}</WalletModalProvider>
-        </WalletProvider>
+            <WalletProvider wallets={wallets} autoConnect>
+                <WalletModalProvider>{children}</WalletModalProvider>
+            </WalletProvider>
         </ConnectionProvider>
     );
 }
-export default walletConnectProvider;
+export default WalletConnectProvider;
 
 // const MainView = () => {
 //     const wallet = useWallet();
