@@ -1,5 +1,5 @@
 import { ConnectionProvider, WalletProvider } from "@solana/wallet-adapter-react";
-import { WalletConnectProvider } from "@solana/wallet-adapter-walletconnect";
+
 import { PhantomWalletAdapter } from "@solana/wallet-adapter-wallets";
 import { getPhantomWallet } from "@solana/wallet-adapter-wallets";
 import { clusterApiUrl } from "@solana/web3.js";
